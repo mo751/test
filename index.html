@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار قالب EmailJS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            text-align: right;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        .row {
+            margin-bottom: 20px;
+        }
+        .button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("iZj8XWRPClIb7Xju9"); // استخدم المفتاح العام الصحيح
+        })();
+
+        function sendTestEmail() {
+            const templateParams = {
+                to_name: 'Mohammed',
+                from_name: 'Test Site',
+                message: 'This is a test message.'
+            };
+
+            emailjs.send('service_5p91utk', 'template_t9w05bg', templateParams) // استخدم معرف القالب الجديد
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert('تم إرسال البريد الإلكتروني بنجاح.');
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    alert('حدث خطأ أثناء إرسال البريد الإلكتروني. يرجى التحقق من وحدة التحكم للمزيد من التفاصيل.');
+                });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>اختبار قالب EmailJS</h1>
+        <button class="button" onclick="sendTestEmail()">إرسال رسالة اختبار</button>
+    </div>
+</body>
+</html>
