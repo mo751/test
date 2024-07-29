@@ -37,7 +37,7 @@
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script type="text/javascript">
         (function() {
-            emailjs.init("iZj8XWRPClIb7Xju9"); // استخدم المفتاح العام الصحيح
+            emailjs.init("-NZge5vqsozcfwuxy"); // استخدم المفتاح العام الصحيح
         })();
 
         function sendTestEmail() {
@@ -47,7 +47,7 @@
                 message: 'This is a test message.'
             };
 
-            emailjs.send('service_5p91utk', 'template_t9w05bg', templateParams) // استخدم معرف القالب الجديد
+            emailjs.send('service_5p91utk', 'template_2o3joke', templateParams) // استخدم معرف القالب الجديد
                 .then(function(response) {
                     console.log('SUCCESS!', response.status, response.text);
                     alert('تم إرسال البريد الإلكتروني بنجاح.');
